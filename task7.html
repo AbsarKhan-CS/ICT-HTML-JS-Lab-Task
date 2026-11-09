@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List Item Remover</title>
+</head>
+<body>
+
+    <h2>Task 7: List Item Remover</h2>
+
+    <p>Click any item to remove it:</p>
+
+    <ul id="myList">
+        <li onclick="removeItem(this)">Apple</li>
+        <li onclick="removeItem(this)">Banana</li>
+        <li onclick="removeItem(this)">Mango</li>
+        <li onclick="removeItem(this)">Orange</li>
+        <li onclick="removeItem(this)">Grapes</li>
+    </ul>
+
+    <script>
+        function removeItem(item) {
+            item.remove();
+        }
+    </script>
+
+</body>
+</html>

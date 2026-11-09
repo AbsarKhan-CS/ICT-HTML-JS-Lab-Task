@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Lab Tasks</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .task {
+            border: 1px solid black;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        li {
+            cursor: pointer;
+            margin: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Lab Tasks</h1>
+
+    <!-- TASK 1: Change Background Color -->
+    <div class="task">
+        <h2>Task 1: Change Background Color</h2>
+
+        <button onclick="changeBackground()">
+            Change Background Color
+        </button>
+    </div>
+
+
+    <!-- TASK 2: Display Alert Message -->
+    <div class="task">
+        <h2>Task 2: Display an Alert Message</h2>
+
+        <button onclick="showAlert()">
+            Click Me
+        </button>
+    </div>
+
+
+    <!-- TASK 3: Simple Calculator -->
+    <div class="task">
+        <h2>Task 3: Simple Calculator</h2>
+
+        <input type="number" id="num1" placeholder="Enter first number">
+
+        <input type="number" id="num2" placeholder="Enter second number">
+
+        <button onclick="addNumbers()">Add Numbers</button>
+
+        <p id="result">Result: </p>
+    </div>
+
+
+    <!-- TASK 4: Count Button Clicks -->
+    <div class="task">
+        <h2>Task 4: Count Button Clicks</h2>
+
+        <button onclick="countClicks()">
+            Click Me
+        </button>
+
+        <p id="count">Button Clicks: 0</p>
+    </div>
+
+
+    <!-- TASK 6: Change Text Color -->
+    <div class="task">
+        <h2>Task 6: Change Text Color</h2>
+
+        <h3 id="heading">Hello! This is my heading.</h3>
+
+        <button onclick="changeTextColor()">
+            Change Text Color
+        </button>
+    </div>
+
+
+    <!-- TASK 7: List Item Remover -->
+    <div class="task">
+        <h2>Task 7: List Item Remover</h2>
+
+        <p>Click any item to remove it from the list.</p>
+
+        <ul id="myList">
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Mango</li>
+            <li>Orange</li>
+            <li>Grapes</li>
+        </ul>
+    </div>
+
+
+    <script>
+
+        // TASK 1: Change Background Color
+
+        let colors = [
+            "red",
+            "blue",
+            "green",
+            "yellow",
+            "purple",
+            "orange"
+        ];
+
+        let colorIndex = 0;
+
+        function changeBackground() {
+            document.body.style.backgroundColor =
+                colors[colorIndex];
+
+            colorIndex++;
+
+            if (colorIndex >= colors.length) {
+                colorIndex = 0;
+            }
+        }
+
+
+        // TASK 2: Display Alert Message
+
+        function showAlert() {
+            alert("Hello! Button clicked successfully.");
+        }
+
+
+        // TASK 3: Simple Calculator
+
+        function addNumbers() {
+            let number1 = Number(
+                document.getElementById("num1").value
+            );
+
+            let number2 = Number(
+                document.getElementById("num2").value
+            );
+
+            let sum = number1 + number2;
+
+            document.getElementById("result").innerHTML =
+                "Result: " + sum;
+        }
+
+
+        // TASK 4: Count Button Clicks
+
+        let clicks = 0;
+
+        function countClicks() {
+            clicks++;
+
+            document.getElementById("count").innerHTML =
+                "Button Clicks: " + clicks;
+        }
+
+
+        // TASK 6: Change Text Color
+
+        function changeTextColor() {
+            document.getElementById("heading").style.color = "red";
+        }
+
+
+        // TASK 7: List Item Remover
+
+        let listItems = document.querySelectorAll("#myList li");
+
+        listItems.forEach(function(item) {
+            item.addEventListener("click", function() {
+                this.remove();
+            });
+        });
+
+    </script>
+
+</body>
+</html>
